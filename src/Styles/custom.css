@@ -1,0 +1,53 @@
+/* src/styles/custom.css */
+
+:root {
+  /* 1. 字体系统：融合中西古典感 */
+  --sl-font-system: "EB Garamond", "Libre Caslon Text", "Noto Serif SC", "Source Han Serif SC", "STSong", serif;
+  
+  /* 2. 色彩系统：羊皮纸与墨色 */
+  --sl-color-bg: #fdfaf2;            /* 故纸米白 */
+  --sl-color-text: #1a1a1a;          /* 浓墨黑 */
+  --sl-color-accent: #8b0000;        /* 朱砂红 */
+  --sl-color-accent-high: #b8860b;   /* 暗金色 */
+  --sl-color-hairline-light: rgba(0, 0, 0, 0.05);
+}
+
+/* 针对暗黑模式的优雅降级 */
+:root[data-theme='dark'] {
+  --sl-color-bg: #121212;
+  --sl-color-text: #d1d1d1;
+  --sl-color-accent: #c0392b;
+}
+
+/* 3. 布局优化：极简呼吸感 */
+.main-pane {
+  max-width: 52rem !important;      /* 窄屏阅读，类似精装书版式 */
+  line-height: 1.85 !important;
+}
+
+/* 隐藏搜索框背景，使其悬浮感 */
+#site-search button {
+  border: none !important;
+  background: transparent !important;
+}
+
+/* 侧边栏与页脚微调 */
+.sidebar-content {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+footer {
+  border-top: 1px solid var(--sl-color-hairline-light) !important;
+  opacity: 0.6;
+}
+
+/* 4. 增强考据质感：首字下沉 */
+.sl-markdown-content > p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.2em;
+  line-height: 0.8;
+  padding: 4px 8px 0 0;
+  color: var(--sl-color-accent);
+  font-family: "Noto Serif SC", serif;
+}
